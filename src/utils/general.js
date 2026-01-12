@@ -192,7 +192,7 @@ export const fetchCategoriesAndServices = (allCategoryNames) => {
 
         for (let serviceName of serviceNames) {
             const service = services[serviceName];
-            service._enabled = false;
+            service._enabled = services[serviceName].enable ?? false;
             _allDefinedServices[categoryName][serviceName] = service;
         }
     }
